@@ -1,0 +1,10 @@
+name: python-syntax-check
+on: push
+
+jobs:
+    job1:
+    - name: first-job
+      runs-on: ubuntu-latest
+      steps:
+        - name: Python Syntax Checker
+          uses: cclauss/Find-Python-syntax-errors-action@v0.2.0
