@@ -1,0 +1,24 @@
+name: env-checker
+on: push
+env:
+    WORKSPACE_ENV_VAR: "This is workspace level environment variable"
+jobs:
+    ubuntu:
+        env:
+            JOB_ENV_VAR: "This is ubuntu job level environment variable"
+        runs-on: ubuntu-latest
+        steps:
+            - name: printing ubuntu environment variables
+              env:
+                STEP_ENV_VAR: "This is step level environment variable"
+              run: |
+                echo "Printing environment variables in shell syntax"
+                echo ""
+                echo "$WORKSPACE_ENV_VAR"
+                echo "$JOB_ENV_VAR"
+                echo "$STEP_ENV_VAR"
+                echo ""
+                echo "Printing environment variable in yaml syntax"
+                echo "${{env.WORKSPACE_ENV_VAR}}"
+                echo "${{env.JOB_ENV_VAR}}"
+                echo "${{env.STEP_ENV_VAR}} can't be accessed as it is defined in the same step"
