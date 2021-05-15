@@ -3,7 +3,7 @@ on: push
 
 jobs:
     job1:
-    - name: first-job
+      name: python-syntax-Checker
       runs-on: ubuntu-latest
       steps:
       - name: Python Syntax Checker
