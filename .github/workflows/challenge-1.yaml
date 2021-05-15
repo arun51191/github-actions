@@ -1,0 +1,28 @@
+name: four-jobs
+on: push
+
+jobs:
+    job1:
+        name: first-job
+        run-on: ubuntu-latest
+        steps:
+        - name: step-1
+          run: date
+    job2:
+        name: second-job
+        run-on: windows-latest
+        steps:
+        - name: step-1
+          run: date
+    job3:
+        name: third-job
+        run-on: macos-latest
+        steps:
+        - name: step-1
+          run: date
+    job4:
+        name: fourth-job
+        run-on: macos-latest
+        steps:
+        - name: step-1
+          run: date
