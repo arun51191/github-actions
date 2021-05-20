@@ -1,6 +1,6 @@
 name: python linting and unit testing
 
-on: [push]
+on: push
 
 jobs:
   python:
