@@ -1,9 +1,9 @@
 name: python linting and unit testing
 
-on : [push]
+on: [push]
 
 jobs:
-  linting:
+  python:
   runs-on: ubuntu-latest
   steps:
     - name: checking out the code
