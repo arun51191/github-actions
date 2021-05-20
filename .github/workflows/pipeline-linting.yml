@@ -1,7 +1,5 @@
-name: python linting and unit testing
-
+name: python
 on: push
-
 jobs:
   python:
     runs-on: ubuntu-latest
