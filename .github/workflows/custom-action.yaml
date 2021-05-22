@@ -6,3 +6,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: arun51191/custom-action-2@main
+      - name: executing shell script
+        run: |
+          whoami
+          cat /etc/os-release
+          ps -a
