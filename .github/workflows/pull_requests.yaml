@@ -1,6 +1,6 @@
 name: validating json file
 on: 
-  pull_request
+  pull_request:
     branches:
     - master
     paths:
