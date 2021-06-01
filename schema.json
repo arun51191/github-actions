@@ -1,142 +1,434 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
   "type": "object",
-  "properties": {
-    "register": {
-      "type": "object",
-      "properties": {
-        "lab": {
-          "type": "object",
-          "properties": {
-            "market_jcd_cn_sh_metro": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "market_jcd_cn_airport_pvg": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "market_jcd_cn_airport_can": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            }
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+      {
+          "register": {
+              "lab": {
+                  "market_jcd_cn_sh_metro": [
+                      "arunkuralla@gmail.com",
+                      "arunaws51191@gmail.com"
+                  ],
+                  "market_jcd_cn_airport_pvg": [
+                      "mahesh.chitluru@gmail.com",
+                      "arunkuralla@gmail.com"
+                  ],
+                  "market_jcd_cn_airport_can": [
+                      "arunkuralla@gmail.com",
+                      "arunaws51191@gmail.com"
+                  ]
+              },
+              "prd": {
+                  "market_jcd_cn_sh_metro": [
+                      "arunkuralla@gmail.com",
+                      "rajdeep1234@gmail.com"
+                  ],
+                  "market_jcd_cn_airport_pvg": [
+                      "rajdeep1234@gmail.com",
+                      "arunkuralla@gmail.com"
+                  ],
+                  "market_jcd_cn_airport_can": [
+                      "arunkuralla@gmail.com",
+                      "arunkuralla@gmail.com"
+                  ]
+              }
           },
-          "required": [
-            "market_jcd_cn_sh_metro",
-            "market_jcd_cn_airport_pvg",
-            "market_jcd_cn_airport_can"
-          ]
-        },
-        "prd": {
-          "type": "object",
-          "properties": {
-            "market_jcd_cn_sh_metro": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "string"
-                }
+          "deregister": {
+              "lab": [
+                  "K.Arunkumar@rishabhsoft.com",
+                  "sriram1234@gmail.com"
+              ],
+              "prd": [
+                  "K.Arunkumar@rishabhsoft.com",
+                  "sriram1234@gmail.com",
+                  "dhrumil1234xyz@gmail.com"
               ]
-            },
-            "market_jcd_cn_airport_pvg": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            },
-            "market_jcd_cn_airport_can": {
-              "type": "array",
-              "items": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "string"
-                }
-              ]
-            }
-          },
-          "required": [
-            "market_jcd_cn_sh_metro",
-            "market_jcd_cn_airport_pvg",
-            "market_jcd_cn_airport_can"
-          ]
-        }
-      },
-      "required": [
-        "lab",
-        "prd"
-      ]
-    },
-    "deregister": {
-      "type": "object",
-      "properties": {
-        "lab": {
-          "type": "array",
-          "items": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        },
-        "prd": {
-          "type": "array",
-          "items": [
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            },
-            {
-              "type": "string"
-            }
-          ]
-        }
-      },
-      "required": [
-        "lab",
-        "prd"
-      ]
-    }
-  },
+          }
+      }
+  ],
   "required": [
-    "register",
-    "deregister"
-  ]
+      "register",
+      "deregister"
+  ],
+  "properties": {
+      "register": {
+          "$id": "#/properties/register",
+          "type": "object",
+          "title": "The register schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+              {
+                  "lab": {
+                      "market_jcd_cn_sh_metro": [
+                          "arunkuralla@gmail.com",
+                          "arunaws51191@gmail.com"
+                      ],
+                      "market_jcd_cn_airport_pvg": [
+                          "mahesh.chitluru@gmail.com",
+                          "arunkuralla@gmail.com"
+                      ],
+                      "market_jcd_cn_airport_can": [
+                          "arunkuralla@gmail.com",
+                          "arunaws51191@gmail.com"
+                      ]
+                  },
+                  "prd": {
+                      "market_jcd_cn_sh_metro": [
+                          "arunkuralla@gmail.com",
+                          "rajdeep1234@gmail.com"
+                      ],
+                      "market_jcd_cn_airport_pvg": [
+                          "rajdeep1234@gmail.com",
+                          "arunkuralla@gmail.com"
+                      ],
+                      "market_jcd_cn_airport_can": [
+                          "arunkuralla@gmail.com",
+                          "arunkuralla@gmail.com"
+                      ]
+                  }
+              }
+          ],
+          "required": [
+              "lab",
+              "prd"
+          ],
+          "properties": {
+              "lab": {
+                  "$id": "#/properties/register/properties/lab",
+                  "type": "object",
+                  "title": "The lab schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                      {
+                          "market_jcd_cn_sh_metro": [
+                              "arunkuralla@gmail.com",
+                              "arunaws51191@gmail.com"
+                          ],
+                          "market_jcd_cn_airport_pvg": [
+                              "mahesh.chitluru@gmail.com",
+                              "arunkuralla@gmail.com"
+                          ],
+                          "market_jcd_cn_airport_can": [
+                              "arunkuralla@gmail.com",
+                              "arunaws51191@gmail.com"
+                          ]
+                      }
+                  ],
+                  "required": [
+                      "market_jcd_cn_sh_metro",
+                      "market_jcd_cn_airport_pvg",
+                      "market_jcd_cn_airport_can"
+                  ],
+                  "properties": {
+                      "market_jcd_cn_sh_metro": {
+                          "$id": "#/properties/register/properties/lab/properties/market_jcd_cn_sh_metro",
+                          "type": "array",
+                          "title": "The market_jcd_cn_sh_metro schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": [],
+                          "examples": [
+                              [
+                                  "arunkuralla@gmail.com",
+                                  "arunaws51191@gmail.com"
+                              ]
+                          ],
+                          "additionalItems": true,
+                          "items": {
+                              "$id": "#/properties/register/properties/lab/properties/market_jcd_cn_sh_metro/items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#/properties/register/properties/lab/properties/market_jcd_cn_sh_metro/items/anyOf/0",
+                                      "type": "string",
+                                      "title": "The first anyOf schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "arunkuralla@gmail.com",
+                                          "arunaws51191@gmail.com"
+                                      ]
+                                  }
+                              ]
+                          }
+                      },
+                      "market_jcd_cn_airport_pvg": {
+                          "$id": "#/properties/register/properties/lab/properties/market_jcd_cn_airport_pvg",
+                          "type": "array",
+                          "title": "The market_jcd_cn_airport_pvg schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": [],
+                          "examples": [
+                              [
+                                  "mahesh.chitluru@gmail.com",
+                                  "arunkuralla@gmail.com"
+                              ]
+                          ],
+                          "additionalItems": true,
+                          "items": {
+                              "$id": "#/properties/register/properties/lab/properties/market_jcd_cn_airport_pvg/items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#/properties/register/properties/lab/properties/market_jcd_cn_airport_pvg/items/anyOf/0",
+                                      "type": "string",
+                                      "title": "The first anyOf schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "mahesh.chitluru@gmail.com",
+                                          "arunkuralla@gmail.com"
+                                      ]
+                                  }
+                              ]
+                          }
+                      },
+                      "market_jcd_cn_airport_can": {
+                          "$id": "#/properties/register/properties/lab/properties/market_jcd_cn_airport_can",
+                          "type": "array",
+                          "title": "The market_jcd_cn_airport_can schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": [],
+                          "examples": [
+                              [
+                                  "arunkuralla@gmail.com",
+                                  "arunaws51191@gmail.com"
+                              ]
+                          ],
+                          "additionalItems": true,
+                          "items": {
+                              "$id": "#/properties/register/properties/lab/properties/market_jcd_cn_airport_can/items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#/properties/register/properties/lab/properties/market_jcd_cn_airport_can/items/anyOf/0",
+                                      "type": "string",
+                                      "title": "The first anyOf schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "arunkuralla@gmail.com",
+                                          "arunaws51191@gmail.com"
+                                      ]
+                                  }
+                              ]
+                          }
+                      }
+                  },
+                  "additionalProperties": true
+              },
+              "prd": {
+                  "$id": "#/properties/register/properties/prd",
+                  "type": "object",
+                  "title": "The prd schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": {},
+                  "examples": [
+                      {
+                          "market_jcd_cn_sh_metro": [
+                              "arunkuralla@gmail.com",
+                              "rajdeep1234@gmail.com"
+                          ],
+                          "market_jcd_cn_airport_pvg": [
+                              "rajdeep1234@gmail.com",
+                              "arunkuralla@gmail.com"
+                          ],
+                          "market_jcd_cn_airport_can": [
+                              "arunkuralla@gmail.com",
+                              "arunkuralla@gmail.com"
+                          ]
+                      }
+                  ],
+                  "required": [
+                      "market_jcd_cn_sh_metro",
+                      "market_jcd_cn_airport_pvg",
+                      "market_jcd_cn_airport_can"
+                  ],
+                  "properties": {
+                      "market_jcd_cn_sh_metro": {
+                          "$id": "#/properties/register/properties/prd/properties/market_jcd_cn_sh_metro",
+                          "type": "array",
+                          "title": "The market_jcd_cn_sh_metro schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": [],
+                          "examples": [
+                              [
+                                  "arunkuralla@gmail.com",
+                                  "rajdeep1234@gmail.com"
+                              ]
+                          ],
+                          "additionalItems": true,
+                          "items": {
+                              "$id": "#/properties/register/properties/prd/properties/market_jcd_cn_sh_metro/items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#/properties/register/properties/prd/properties/market_jcd_cn_sh_metro/items/anyOf/0",
+                                      "type": "string",
+                                      "title": "The first anyOf schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "arunkuralla@gmail.com",
+                                          "rajdeep1234@gmail.com"
+                                      ]
+                                  }
+                              ]
+                          }
+                      },
+                      "market_jcd_cn_airport_pvg": {
+                          "$id": "#/properties/register/properties/prd/properties/market_jcd_cn_airport_pvg",
+                          "type": "array",
+                          "title": "The market_jcd_cn_airport_pvg schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": [],
+                          "examples": [
+                              [
+                                  "rajdeep1234@gmail.com",
+                                  "arunkuralla@gmail.com"
+                              ]
+                          ],
+                          "additionalItems": true,
+                          "items": {
+                              "$id": "#/properties/register/properties/prd/properties/market_jcd_cn_airport_pvg/items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#/properties/register/properties/prd/properties/market_jcd_cn_airport_pvg/items/anyOf/0",
+                                      "type": "string",
+                                      "title": "The first anyOf schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "rajdeep1234@gmail.com",
+                                          "arunkuralla@gmail.com"
+                                      ]
+                                  }
+                              ]
+                          }
+                      },
+                      "market_jcd_cn_airport_can": {
+                          "$id": "#/properties/register/properties/prd/properties/market_jcd_cn_airport_can",
+                          "type": "array",
+                          "title": "The market_jcd_cn_airport_can schema",
+                          "description": "An explanation about the purpose of this instance.",
+                          "default": [],
+                          "examples": [
+                              [
+                                  "arunkuralla@gmail.com",
+                                  "arunkuralla@gmail.com"
+                              ]
+                          ],
+                          "additionalItems": true,
+                          "items": {
+                              "$id": "#/properties/register/properties/prd/properties/market_jcd_cn_airport_can/items",
+                              "anyOf": [
+                                  {
+                                      "$id": "#/properties/register/properties/prd/properties/market_jcd_cn_airport_can/items/anyOf/0",
+                                      "type": "string",
+                                      "title": "The first anyOf schema",
+                                      "description": "An explanation about the purpose of this instance.",
+                                      "default": "",
+                                      "examples": [
+                                          "arunkuralla@gmail.com"
+                                      ]
+                                  }
+                              ]
+                          }
+                      }
+                  },
+                  "additionalProperties": true
+              }
+          },
+          "additionalProperties": true
+      },
+      "deregister": {
+          "$id": "#/properties/deregister",
+          "type": "object",
+          "title": "The deregister schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": {},
+          "examples": [
+              {
+                  "lab": [
+                      "K.Arunkumar@rishabhsoft.com",
+                      "sriram1234@gmail.com"
+                  ],
+                  "prd": [
+                      "K.Arunkumar@rishabhsoft.com",
+                      "sriram1234@gmail.com",
+                      "dhrumil1234xyz@gmail.com"
+                  ]
+              }
+          ],
+          "required": [
+              "lab",
+              "prd"
+          ],
+          "properties": {
+              "lab": {
+                  "$id": "#/properties/deregister/properties/lab",
+                  "type": "array",
+                  "title": "The lab schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": [],
+                  "examples": [
+                      [
+                          "K.Arunkumar@rishabhsoft.com",
+                          "sriram1234@gmail.com"
+                      ]
+                  ],
+                  "additionalItems": true,
+                  "items": {
+                      "$id": "#/properties/deregister/properties/lab/items",
+                      "anyOf": [
+                          {
+                              "$id": "#/properties/deregister/properties/lab/items/anyOf/0",
+                              "type": "string",
+                              "title": "The first anyOf schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                  "K.Arunkumar@rishabhsoft.com",
+                                  "sriram1234@gmail.com"
+                              ]
+                          }
+                      ]
+                  }
+              },
+              "prd": {
+                  "$id": "#/properties/deregister/properties/prd",
+                  "type": "array",
+                  "title": "The prd schema",
+                  "description": "An explanation about the purpose of this instance.",
+                  "default": [],
+                  "examples": [
+                      [
+                          "K.Arunkumar@rishabhsoft.com",
+                          "sriram1234@gmail.com"
+                      ]
+                  ],
+                  "additionalItems": true,
+                  "items": {
+                      "$id": "#/properties/deregister/properties/prd/items",
+                      "anyOf": [
+                          {
+                              "$id": "#/properties/deregister/properties/prd/items/anyOf/0",
+                              "type": "string",
+                              "title": "The first anyOf schema",
+                              "description": "An explanation about the purpose of this instance.",
+                              "default": "",
+                              "examples": [
+                                  "K.Arunkumar@rishabhsoft.com",
+                                  "sriram1234@gmail.com"
+                              ]
+                          }
+                      ]
+                  }
+              }
+          },
+          "additionalProperties": true
+      }
+  },
+  "additionalProperties": true
 }
