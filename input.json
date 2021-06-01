@@ -11,7 +11,8 @@
             ],
             "market_jcd_cn_airport_can": [
                 "arunkuralla@gmail.com",
-                "arunaws51191@gmail.com"
+                "arunaws51191@gmail.com",
+                "test.user@gmail.com"
             ]
         },
         "prd": {
@@ -21,6 +22,7 @@
             ],
             "market_jcd_cn_airport_pvg": [
                 "rajdeep1234@gmail.com",
+                "test.user@gmail.com",
                 "arunkuralla@gmail.com"
             ],
             "market_jcd_cn_airport_can": [
