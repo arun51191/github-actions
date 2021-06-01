@@ -1,0 +1,44 @@
+{
+    "register": {
+        "lab": {
+            "market_jcd_cn_sh_metro": [
+                "arunkuralla@gmail.com",
+                "arunaws51191@gmail.com"
+            ],
+            "market_jcd_cn_airport_pvg": [
+                "mahesh.chitluru@gmail.com"
+            ],
+            "market_jcd_cn_airport_can": [
+                "arunkuralla@gmail.com",
+                "arunaws51191@gmail.com"
+            ]
+        },
+        "prd": {
+            "market_jcd_cn_sh_metro": [
+                "arunkuralla@gmail.com",
+                "rajdeep1234@gmail.com"
+            ],
+            "market_jcd_cn_airport_pvg": [
+                "rajdeep1234@gmail.com",
+                "arunkuralla@gmail.com"
+            ],
+            "market_jcd_cn_airport_can": [
+                "arunkuralla@gmail.com",
+                "arunkuralla@gmail.com"
+            ]
+        }
+    },
+    "deregister": {
+        "lab": [
+            "K.Arunkumar@rishabhsoft.com",
+            "dhrumil1234xyz@gmail.com",
+            "sriram1234@gmail.com"
+        ],
+        "prd": [
+            "K.Arunkumar@rishabhsoft.com",
+            "tejayerubandi1234@gmail.com",
+            "sriram1234@gmail.com",
+            "dhrumil1234xyz@gmail.com",
+        ]
+    }
+}
