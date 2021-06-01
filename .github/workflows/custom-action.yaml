@@ -1,12 +1,12 @@
-name: using my custom action
-on: push
-jobs:
-  main:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: arun51191/custom-action-2@main
-      - name: executing shell script
-        run: |
-          whoami
-          cat /etc/os-release
+# name: using my custom action
+# on: push
+# jobs:
+#   main:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#       - uses: arun51191/custom-action-2@main
+#       - name: executing shell script
+#         run: |
+#           whoami
+#           cat /etc/os-release
