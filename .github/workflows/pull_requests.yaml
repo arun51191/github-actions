@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: executing shell script
         run: |
-          env
+          echo ${{ github.event.pull_request.title }}
+          echo ${{ github.event.pull_request.ref }}
+          echo ${{ github.event.pull_request.sha }}
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
         env:
