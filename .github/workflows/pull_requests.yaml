@@ -5,12 +5,13 @@ on:
     - main
     paths:
     - 'input.yaml'
-main:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v2
-    - uses: arun51191/custom-action-2@main
-    - name: executing shell script
-      run: |
-        whoami
-        echo "validating json file"
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: arun51191/custom-action-2@main
+      - name: executing shell script
+        run: |
+          whoami
+          echo "validating json file"
