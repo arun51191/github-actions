@@ -2,7 +2,7 @@ name: validating json file
 on: 
   pull_request:
     branches:
-    - master
+    - main
     paths:
     - 'input.yaml'
 main:
