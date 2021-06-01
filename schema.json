@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "register": {
+      "type": "object",
+      "properties": {
+        "lab": {
+          "type": "object",
+          "properties": {
+            "market_jcd_cn_sh_metro": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "market_jcd_cn_airport_pvg": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "market_jcd_cn_airport_can": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "market_jcd_cn_sh_metro",
+            "market_jcd_cn_airport_pvg",
+            "market_jcd_cn_airport_can"
+          ]
+        },
+        "prd": {
+          "type": "object",
+          "properties": {
+            "market_jcd_cn_sh_metro": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "market_jcd_cn_airport_pvg": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "market_jcd_cn_airport_can": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "market_jcd_cn_sh_metro",
+            "market_jcd_cn_airport_pvg",
+            "market_jcd_cn_airport_can"
+          ]
+        }
+      },
+      "required": [
+        "lab",
+        "prd"
+      ]
+    },
+    "deregister": {
+      "type": "object",
+      "properties": {
+        "lab": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "prd": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "lab",
+        "prd"
+      ]
+    }
+  },
+  "required": [
+    "register",
+    "deregister"
+  ]
+}
