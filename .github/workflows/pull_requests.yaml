@@ -13,7 +13,7 @@ jobs:
       - name: executing shell script
         run: |
           echo "Validating PR title and branch name"
-          if [[ $github.event.pull_request.title =~ ^SRE|^ZD ]];
+          if [[ $github.event.pull_request.head.ref =~ ^SRE|^ZD ]];
           then
             if [[ $github.event.pull_request.title =~ ^\[SRE|^\[ZD  ]];
             then
