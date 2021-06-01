@@ -12,17 +12,28 @@ jobs:
       - uses: actions/checkout@v2
       - name: executing shell script
         run: |
-          echo "$GITHUB_REF"
-          echo "$GITHUB_HEAD_REF"
-          if [[ "${{ github.event.pull_request.title }}" !~ "^SRE-" ]] && [[ "${{ github.event.pull_request.title }}" !~ "^ZD-" ]];
+          # if [[ "${{ github.event.pull_request.title }}" !~ "^SRE-" ]] && [[ "${{ github.event.pull_request.title }}" !~ "^ZD-" ]];
+          # then
+          #   echo "PR title should start with [SRE-XXX] or [ZD-XXX]"
+          #   exit 1
+          # fi
+          # if [[ "${{ github.event.pull_request.head.ref }}" !~ "^SRE-" ]] && [[ "${{ github.event.pull_request.head.ref }}" !~ "^ZD-" ]];
+          # then
+          #   echo "Branch name should start with [SRE-XXX] or [ZD-XXX]"
+          #   exit 1
+          # fi
+          echo "Validating PR title and branch name"
+          if [[ "$github.event.pull_request.title" =~ ^SRE|^ZD ]];
           then
-            echo "PR title should start with [SRE-XXX] or [ZD-XXX]"
-            exit 1
+          if [[ "$github.event.pull_request.title" =~ ^\[SRE|^\[ZD  ]];
+          then
+          echo "PR title and branch name are valid"
+          exit 0
+          else
+          echo "The PR title should start with SRE or ZD ticket number. For example: [SRE-1234] Adding new user"
           fi
-          if [[ "${{ github.event.pull_request.head.ref }}" !~ "^SRE-" ]] && [[ "${{ github.event.pull_request.head.ref }}" !~ "^ZD-" ]];
-          then
-            echo "Branch name should start with [SRE-XXX] or [ZD-XXX]"
-            exit 1
+          else
+          echo "Invalid branch name. The branch name should start with ZD or SRE ticket number. For example:- SRE-1234-add-user"
           fi
       - name: Validate JSON
         uses: docker://orrosenblatt/validate-json-action:latest
