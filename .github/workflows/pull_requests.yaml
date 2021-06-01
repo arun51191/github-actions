@@ -1,0 +1,15 @@
+name: validating json file
+on: pull_request
+    branches:
+    - master
+    paths:
+    - 'input.yaml'
+main:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v2
+    - uses: arun51191/custom-action-2@main
+    - name: executing shell script
+      run: |
+        whoami
+        echo "validating json file"
